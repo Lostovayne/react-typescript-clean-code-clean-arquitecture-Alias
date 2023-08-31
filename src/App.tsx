@@ -1,11 +1,16 @@
 import "./App.css";
-import { User } from "./models";
+import { Home } from "./pages";
+import { useSelector } from "react-redux";
+import { AppStore } from "./redux/store";
 
 function App() {
-    const user: User = {} as User;
+    const user = useSelector((state: AppStore) => state.user);
+
     return (
         <>
-            <h1>Buenas Buenas </h1>
+            <p>{JSON.stringify(user)}</p>
+
+            <Home />
         </>
     );
 }
